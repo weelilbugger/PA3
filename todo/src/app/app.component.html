@@ -1,0 +1,18 @@
+<div class="main">
+  <h1>Mattias Clouse</h1>
+  <label for="addItemInput">What text would you like to display?</label>
+  <input
+  #newItem
+  placeholder="add text"
+  (keyup.enter)="addItem(newItem.value); newItem.value = ''"
+  class="lg-text-input"
+  id="addItemInput" />
+  <button class="btn-primary" (click)="addItem(newItem.value)">Display Text</button>
+  <!-- Buttons that show all, still to do, or done items on click -->
+
+  
+    <li *ngFor="let i of items">
+    <app-item (remove)="remove(i)" [item]="i"></app-item>
+    </li>
+   
+  </div>
